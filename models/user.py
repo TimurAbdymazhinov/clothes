@@ -13,6 +13,11 @@ user = sa.Table(
     sa.Column("first_name", sa.String(200)),
     sa.Column("last_name", sa.String(200)),
     sa.Column("phone", sa.String(20)),
-    sa.Column("role", sa.Enum(RoleType), nullable=False, server_default=RoleType.complainer.name),
-    sa.Column("iban", sa.String(200))
+    sa.Column(
+        "role",
+        sa.Enum(RoleType),
+        nullable=False,
+        server_default=RoleType.complainer.name,
+    ),
+    sa.Column("iban", sa.String(200)),
 )

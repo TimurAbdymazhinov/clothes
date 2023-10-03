@@ -14,12 +14,17 @@ from models import RoleType
 @click.option("-p", "--password", type=str, required=True)
 async def create_user(first_name, last_name, email, phone, iban, password):
     user_data = {
-        "first_name": first_name, "last_name": last_name, "email": email,
-        "phone": phone, "iban": iban, "password": password
+        "first_name": first_name,
+        "last_name": last_name,
+        "email": email,
+        "phone": phone,
+        "iban": iban,
+        "password": password,
     }
     await database.connect()
     await UserManager.register(user_data)
     await database.disconnect()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     create_user(_anyio_backend="asyncio")
