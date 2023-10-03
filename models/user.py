@@ -3,7 +3,6 @@ import sqlalchemy as sa
 from db import metadata
 from models.enums import RoleType
 
-
 user = sa.Table(
     "users",
     metadata,

@@ -1,8 +1,7 @@
+from datetime import datetime, timedelta
 from typing import Optional
 
-import databases
 import jwt
-from datetime import datetime, timedelta
 from decouple import config
 from fastapi import HTTPException
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials

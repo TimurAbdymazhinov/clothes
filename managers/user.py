@@ -1,6 +1,7 @@
+from asyncpg import UniqueViolationError
 from fastapi import HTTPException
 from passlib.context import CryptContext
-from asyncpg import UniqueViolationError
+
 from db import database
 from managers.auth import AuthManager
 from models import user, RoleType
