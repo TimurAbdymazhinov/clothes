@@ -29,8 +29,7 @@ async def get_complaints(request: Request):
 async def create_complaint(request: Request, complaint: ComplaintIn):
     user = request.state.user
     comp_dict = complaint.dict()
-    comp_dict["complainer_id"] = user.id
-    return await ComplaintManager.create_complaint(comp_dict)
+    return await ComplaintManager.create_complaint(comp_dict, user)
 
 
 @router.delete(
